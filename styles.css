@@ -1,57 +1,205 @@
 :root {
-  --skyblue: #219ebc;
+  --skyblue: #3ca0b9;
+  --darker-blue: #003049;
+  --darker-blue-hover: #014f86;
   --grass-green: #4f772d;
   --lighter-green: #a3b18a;
   --darker-green: #3a5a40;
-  --white: white ;
+  --white: white;
   --black: black;
   --font-family: "Inter", sans-serif;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body * {
-  background-color: #219ebc;
-  border: black solid 2px;
-  font-family: var(--font-family);
-}
-
 /* estilos generales */
-/* header */
+html,
+body {
+  height: 100%;
+}
 
-/* aside */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* body * {
+  border: 2px black solid;
+  background-color: rosybrown;
+} */
+
+/* header */
+header {
+  background-color: var(--grass-green);
+  padding: 0 2rem;
+}
+
+.brand__container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 2rem;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show,
+.title__h2 {
+  color: var(--white);
+}
+
+.container-fluid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.logo_nav {
+  width: 70px;
+  border-radius: 50%;
+}
+
+
+
+/* esto aplica espaciado a las secciones principales */
 /* main */
+main {
+  flex: 1;
+  margin: 0 2rem;
+}
+
+main > section {
+  padding: 1rem 1rem;
+  margin-bottom: 2rem;
+}
+
 /* footer */
 footer {
+  background-color: var(--grass-green);
+  color: var(--white);
   display: grid;
+  text-align: center;
   grid-template-columns: 1fr 1fr;
+  padding: 0.8rem;
+}
+
+footer .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+footer .footer-logo .logo_nav {
+  margin-right: 0; /* Asegúrate de que no herede margen */
+}
+
+.fa-brands {
+  color: var(--white);
+  margin: 1fr;
 }
 
 .footer-logo {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
 
-/* index */
+.update__subscription{
+  margin-right: 6rem;
+  margin-left: 2rem;
+}
+
+/* Diseño para el aside */
+.desktop__container,
+.contact__container,
+.subscriptions__container,
+.events__container {
+  display: grid;
+  grid-template-areas:
+    "aside main"
+    "footer footer";
+  grid-template-columns: 1fr 6fr;
+  grid-template-rows: 4fr 1fr;
+}
+
+.desktop__container aside,
+.contact__container aside,
+.subscriptions__container aside,
+.events__container aside {
+  grid-area: aside;
+  background-color: var(--darker-green);
+  text-align: center;
+  padding: 3rem 0.8rem;
+}
+
+.desktop__container main,
+.contact__container main,
+.subscriptions__container main,
+.events__container main {
+  grid-area: main;
+  text-align: center;
+  padding: 2rem 0.5rem;
+}
+
+.desktop__container footer,
+.contact__container footer,
+.subscriptions__container footer,
+.events__container footer {
+  grid-area: footer;
+}
+
+/* botones */
+.btn-primary{
+  background-color: var(--darker-blue);
+  border: none;
+}
+
+.btn-primary:hover{
+  background-color: var(--darker-blue-hover);
+}
+
+/* main */
 /* estilos para carrusel */
+.carousel_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .carousel {
-  width: 70%;
-  height: 50%;
+  width: 100%;
+  max-width: 60rem;
+  height: auto;
 }
 
 /* estilos para about us */
 .about-us {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
+  text-align: center;
+}
+
+.about-us__img {
+  width: 20rem;
+  height: 20rem;
 }
 
 /* estilos para events */
+/* display grid, divide en columnas de 3 por cada fila (3 cartas por fila) */
+.events {
+  text-align: center;
+}
+
 .events_cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--lighter-green);
 }
 
 /* estilos para contact */
@@ -59,29 +207,94 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: center;
+  align-items: center;
 }
 
 .contact-map__img {
-  margin: 2rem;
-  width: 30rem;
-  height: 30rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+}
+
+.contact-form {
+  border-radius: 7%;
+  background-color: #4f772d;
+  padding: 2rem;
+  margin: 4rem;
+}
+
+/* estilos para testimonios */
+.testimonials {
+  text-align: center;
+}
+
+.testimonial_containers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 /* login */
+.login__main {
+  text-align: center;
+  margin-top: 2rem;
+}
 
+.login__form {
+  background-color: var(--lighter-green);
+  padding: 2rem;
+  margin: 2rem 20rem;
+  text-align: center;
+}
 /* subscriptions */
 
+
 /* eventManagement */
+.modal-content{
+  background-color: var(--skyblue);
+}
+
+.title__h3 {
+  margin-bottom: 2rem;
+}
+
 
 /* desktop */
 .activity__container {
+  margin: 2rem 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
 }
 
-.engagement__container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.engagement__container {
+  margin: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
 }
+
+
 
 /* contact */
+
+/* estilos para los modales */
+.modal-body textarea {
+  resize: none;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .about-us,
+  .contact,
+  footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .carousel {
+    width: 95%;
+  }
+}

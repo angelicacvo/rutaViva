@@ -21,12 +21,21 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  
+
   <body class="index_container">
     <header>
-      <nav class="index_nav navbar navbar-expand-lg">
+      <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="brand" href="#">LOGO</a>
+          <div class="brand__container">
+            <a class="brand" href="#">
+              <img
+                class="logo_nav"
+                src="./assets/img/logoRutaViva.png"
+                alt=""
+              />
+            </a>
+            <h2 class="title__h2">Ruta viva</h2>
+          </div>
           <button
             class="navbar-toggler"
             type="button"
@@ -41,7 +50,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/index.html"
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/index.html"
                   >Inicio</a
                 >
               </li>
@@ -56,7 +68,7 @@
               </li>
               <!-- esto se quita, es para poder navegar -->
               <li class="nav-item">
-                <a class="nav-link active" href="./pages/login.html">Login</a>
+                <a class="nav-link active" href="/pages/login.html">Login</a>
               </li>
             </ul>
           </div>
@@ -74,21 +86,21 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
-                src="./assets/img/prueba-carrusel.png"
+                src="./assets/img/caminata_carrusel.png"
                 class="d-block w-100"
                 alt=""
               />
             </div>
             <div class="carousel-item">
               <img
-                src="./assets/img/prueba-carrusel.png"
+                src="./assets/img/ciclismo_carrusel.png"
                 class="d-block w-100"
                 alt="..."
               />
             </div>
             <div class="carousel-item">
               <img
-                src="./assets/img/prueba-carrusel.png"
+                src="./assets/img/patinaje_carrusel.png"
                 class="d-block w-100"
                 alt="..."
               />
@@ -121,8 +133,12 @@
           <p class="about-us__p">Descripcion</p>
         </div>
 
-        <div class="about-us__img">
-          <img src="..." alt="about-us" />
+        <div class="about-us__img-container">
+          <img
+            class="about-us__img"
+            src="/assets/img/senderismo3.png"
+            alt="about-us"
+          />
         </div>
       </section>
 
@@ -130,10 +146,10 @@
         <h3 class="title__h3">Titulo (Eventos)</h3>
         <!-- display grid, divide en columnas de 3 por cada fila (3 cartas por fila) -->
         <div class="events_cards">
+          <!-- desde aqui se inserta en js para insertar toda la card -->
           <div class="col">
-            <!-- desde aqui se inserta en js para insertar toda la card -->
             <div class="card">
-              <img src="..." class="card-img-top" alt="..." />
+              <img src="./assets/img/ciclovia2.png" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">
@@ -144,6 +160,7 @@
               </div>
             </div>
           </div>
+          <!-- hasta aqui -->
         </div>
       </section>
 
@@ -155,7 +172,7 @@
             alt=""
           />
         </div>
-        <div class="map-form">
+        <div class="contact-form">
           <form>
             <div class="mb-3">
               <label for="exampleInputName1" class="form-label">Nombre</label>
@@ -186,14 +203,132 @@
           </form>
         </div>
       </section>
+
+      <section class="testimonials">
+        <h3 class="title__h3">Testimonios</h3>
+        <!-- En los modales cambiar data-bs-target el id del modal, porque eso es lo que -->
+        <!-- nos dice a cual modal lleva cuando da click -->
+        <!-- Button trigger modal -->
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Agregar Testimonios
+        </button>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Título</h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="modal__input">
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label"
+                      >Nombre completo</label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="1"
+                    ></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label"
+                      >Nombre del evento</label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="1"
+                    ></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label"
+                      >Descripción (lugar)</label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="1"
+                    ></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label"
+                      >Fecha y hora</label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="1"
+                    ></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label"
+                      >Elegir imágen</label
+                    >
+                    <input class="form-control" type="file" id="formFile" />
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cerrar
+                </button>
+                <button type="button" class="btn btn-primary">Guardar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial_containers">
+          <!-- esta es lacard que se utiliza para js, desde aqui -->
+          <div class="card" style="width: 18rem">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Descripcion</p>
+              <p class="card-text">Lugar</p>
+              <p class="card-text">Nombre</p>
+            </div>
+          </div>
+          <!-- hasta aqui -->
+        </div>
+      </section>
     </main>
 
     <footer>
       <div class="footer__info">
         <div class="footer-brand">
           <div class="footer-logo">
-            <p class="brand">logo</p>
-            <h3>Ruta Viva</h3>
+            <div class="brand">
+              <img
+                class="logo_nav"
+                src="./assets/img/logoRutaViva.png"
+                alt=""
+              />
+            </div>
+            <h3>Ruta Viva <i class="fa-solid fa-leaf"></i></h3>
           </div>
           <p>Conectamos personas a través del deporte</p>
         </div>
@@ -217,7 +352,7 @@
             aria-describedby="button-addon2"
           />
           <button
-            class="btn btn-outline-secondary"
+            class="btn btn-primary"
             type="button"
             id="button-addon2"
           >
