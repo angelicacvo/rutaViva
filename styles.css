@@ -1,0 +1,87 @@
+:root {
+  --skyblue: #219ebc;
+  --grass-green: #4f772d;
+  --lighter-green: #a3b18a;
+  --darker-green: #3a5a40;
+  --white: white ;
+  --black: black;
+  --font-family: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  background-color: #219ebc;
+  border: black solid 2px;
+  font-family: var(--font-family);
+}
+
+/* estilos generales */
+/* header */
+
+/* aside */
+/* main */
+/* footer */
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.footer-logo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* index */
+/* estilos para carrusel */
+.carousel {
+  width: 70%;
+  height: 50%;
+}
+
+/* estilos para about us */
+.about-us {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* estilos para events */
+.events_cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* estilos para contact */
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+.contact-map__img {
+  margin: 2rem;
+  width: 30rem;
+  height: 30rem;
+}
+
+/* login */
+
+/* subscriptions */
+
+/* eventManagement */
+
+/* desktop */
+.activity__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.engagement__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* contact */
