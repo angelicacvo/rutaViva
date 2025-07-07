@@ -1,0 +1,20 @@
+{
+  "subs": [
+    {
+      "id": "1",
+      "email": "mamama@mail.com"
+    },
+    {
+      "id": "2",
+      "email": "asasdasd@cor.com"
+    },
+    {
+      "id": "3",
+      "email": "llmkjn@kn.com"
+    },
+    {
+      "id": "4",
+      "email": "mail@example.com"
+    }
+  ]
+}
