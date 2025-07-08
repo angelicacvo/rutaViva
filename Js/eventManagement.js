@@ -1,167 +1,213 @@
-// url db
 const eventsURL = "http://localhost:3000/events";
 
-// get events
-fetch(eventsURL)
-  .then(response => response.json())
-  .then(data => start(data))
-  .catch(error => console.error("Error al obtener eventos:", error));
+// On page load
+document.addEventListener("DOMContentLoaded", () => {
+	loadEvents();
 
-function start(data) {
-  const table = document.getElementById("events");
-  table.innerHTML = "";
+	// Button logic (create or update)
+	document.getElementById("saveEventBtn").addEventListener("click", () => {
+		const modal = document.getElementById("exampleModal");
+		const eventId = modal.getAttribute("data-event-id");
 
-  data.forEach(event => {
-    table.innerHTML += `
-      <tr>
-        <td>${event.title}</td>
-        <td>${event.description}</td>
-        <td>${event.state}</td>
-        <td>${event.date}</td>
-        <td>
-          <div class="btn-group" role="group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Acciones
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a 
-                  class="dropdown-item edit-btn"
-                  href="#"
-                  data-bs-toggle="modal"
-                  data-bs-target="#editModal"
-                  data-id="${event.id}"
-                  data-title="${event.title}"
-                  data-description="${event.description}"
-                  data-date="${event.date}">
-                  Editar
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item del" href="#" data-id="${event.id}">Eliminar</a>
-              </li>
-            </ul>
-          </div>
-        </td>
-      </tr>
-    `;
-  });
+		if (eventId) {
+			handleUpdate(eventId);
+		} else {
+			handleSave();
+		}
+	});
+});
+
+// Load events from server
+function loadEvents() {
+	fetch(eventsURL)
+		.then((res) => res.json())
+		.then((data) => renderTable(data))
+		.catch((err) => console.error("❌ Error loading events:", err));
 }
 
-// delete event
-const tbody = document.getElementById("events");
+// Render table rows
+function renderTable(events) {
+	const table = document.getElementById("events");
+	table.innerHTML = `
+		<tr>
+			<th>Imagen</th>
+			<th>Título</th>
+			<th>Descripción</th>
+			<th>Estado</th>
+			<th>Fecha</th>
+			<th>Acciones</th>
+		</tr>
+	`;
 
-tbody.addEventListener("click", e => {
-  if (e.target && e.target.classList.contains("del")) {
-    const id = e.target.getAttribute("data-id");
-    const confirmDelete = confirm("¿Estás seguro de que deseas eliminar el evento?");
-    if (!confirmDelete) return;
+	events.forEach((event) => {
+		table.innerHTML += `
+			<tr>
+				<td>
+					${event.image ? `<img src="${event.image}" alt="Event Image" style="width: 80px; height: auto; border-radius: 6px;">` : "Sin imagen"}
+				</td>
+				<td>${event.title}</td>
+				<td>${event.description}</td>
+				<td>${event.state}</td>
+				<td>${event.date}</td>
+				<td>
+					<div class="btn-group" role="group">
+						<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+							Acciones
+						</button>
+						<ul class="dropdown-menu">
+							<li><button class="dropdown-item" onclick="editEvent('${event.id}')">Editar</button></li>
+							<li><button class="dropdown-item" onclick="deleteEvent('${event.id}')">Eliminar</button></li>
+						</ul>
+					</div>
+				</td>
+			</tr>
+		`;
+	});
+}
 
-    if (id) {
-      fetch(`${eventsURL}/${id}`, {
-        method: "DELETE"
-      })
-        .then(response => {
-          if (response.ok) {
-            alert("Evento eliminado correctamente.");
-            return fetch(eventsURL)
-              .then(res => res.json())
-              .then(data => start(data));
-          } else {
-            alert("Error al eliminar evento.");
-          }
-        })
-        .catch(error => {
-          console.error("Error al eliminar:", error);
-        });
-    }
-  }
-});
+// Create new event
+function handleSave() {
+	const title = document.getElementById("eventTitle").value.trim();
+	const description = document.getElementById("eventDescription").value.trim();
+	const date = document.getElementById("eventDate").value.trim();
+	const file = document.getElementById("formFile").files[0];
 
-// create event
-document.getElementById("createEventBtn").addEventListener("click", () => {
-  const newEvent = {
-    title: document.getElementById("create-title").value,
-    description: document.getElementById("create-description").value,
-    date: document.getElementById("create-date").value,
-    state: "active"
-  };
+	if (!title || !description || !date || !file) {
+		alert("Por favor, completa todos los campos y selecciona una imagen.");
+		return;
+	}
 
-  fetch(eventsURL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(newEvent)
-  })
-    .then(response => {
-      if (response.ok) {
-        alert("Evento creado correctamente.");
-        // Limpiar campos
-        document.getElementById("create-title").value = "";
-        document.getElementById("create-description").value = "";
-        document.getElementById("create-date").value = "";
+	const reader = new FileReader();
+	reader.onload = async function (e) {
+		const newEvent = {
+			title,
+			description,
+			date,
+			state: "Activo",
+			image: e.target.result
+		};
 
-        return fetch(eventsURL)
-          .then(res => res.json())
-          .then(data => start(data));
-      } else {
-        alert("Error al crear evento.");
-      }
-    })
-    .catch(error => {
-      console.error("Error al crear evento:", error);
-    });
-});
+		try {
+			const res = await fetch(eventsURL, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(newEvent)
+			});
 
-document.addEventListener("click", function (e) {
-  if (e.target && e.target.classList.contains("edit-btn")) {
-    const btn = e.target;
-    document.getElementById("edit-id").value = btn.dataset.id;
-    document.getElementById("edit-title").value = btn.dataset.title;
-    document.getElementById("edit-description").value = btn.dataset.description;
-    document.getElementById("edit-date").value = btn.dataset.date;
-  }
-});
+			if (!res.ok) throw new Error("Error al guardar evento");
 
-// edit event
-document.getElementById("saveChangesBtn").addEventListener("click", () => {
-  const id = document.getElementById("edit-id").value;
+			alert("✅ Evento guardado correctamente");
 
-  const title = document.getElementById("edit-title").value;
-  const description = document.getElementById("edit-description").value;
-  const date = document.getElementById("edit-date").value;
+			bootstrap.Modal.getInstance(document.getElementById("exampleModal")).hide();
+			clearForm();
+			loadEvents();
+		} catch (err) {
+			console.error(err);
+			alert("❌ No se pudo guardar el evento");
+		}
+	};
+	reader.readAsDataURL(file);
+}
 
-  const updatedData = {};
-  if (title.trim() !== "") updatedData.title = title;
-  if (description.trim() !== "") updatedData.description = description;
-  if (date.trim() !== "") updatedData.date = date;
+// Edit an event (fill form and open modal)
+function editEvent(id) {
+	fetch(`${eventsURL}/${id}`)
+		.then(res => res.json())
+		.then(event => {
+			document.getElementById("eventTitle").value = event.title;
+			document.getElementById("eventDescription").value = event.description;
+			document.getElementById("eventDate").value = event.date;
+			document.getElementById("formFile").value = "";
 
-  if (Object.keys(updatedData).length === 0) {
-    alert("No se ha modificado ningún campo.");
-    return;
-  }
+			const modal = document.getElementById("exampleModal");
+			modal.setAttribute("data-event-id", id);
+			modal.setAttribute("data-event-img", event.image || "");
 
-  fetch(`${eventsURL}/${id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(updatedData)
-  })
-    .then(response => {
-      if (response.ok) {
-        alert("Evento actualizado correctamente.");
-        return fetch(eventsURL)
-          .then(res => res.json())
-          .then(data => start(data));
-      } else {
-        alert("Error al actualizar");
-      }
-    })
-    .catch(error => console.log("Error al actualizar", error));
-});
+			new bootstrap.Modal(modal).show();
+		})
+		.catch(err => {
+			console.error("❌ No se pudo cargar el evento:", err);
+			alert("❌ Error al cargar el evento.");
+		});
+}
 
+// Update existing event
+function handleUpdate(id) {
+	const title = document.getElementById("eventTitle").value.trim();
+	const description = document.getElementById("eventDescription").value.trim();
+	const date = document.getElementById("eventDate").value.trim();
+	const fileInput = document.getElementById("formFile");
+	const file = fileInput.files[0];
+	const modal = document.getElementById("exampleModal");
+	const existingImage = modal.getAttribute("data-event-img");
 
+	if (!title || !description || !date) {
+		alert("Por favor, completa todos los campos.");
+		return;
+	}
 
+	const updateWithImage = (imageBase64) => {
+		const updatedEvent = {
+			title,
+			description,
+			date,
+			state: "Activo",
+			image: imageBase64
+		};
 
+		fetch(`${eventsURL}/${id}`, {
+			method: "PUT",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(updatedEvent)
+		})
+			.then(res => {
+				if (!res.ok) throw new Error("No se pudo actualizar");
+				alert("✅ Evento actualizado");
+				bootstrap.Modal.getInstance(modal).hide();
+				clearForm();
+				loadEvents();
+			})
+			.catch(err => {
+				console.error("❌ Error actualizando:", err);
+				alert("❌ No se pudo actualizar el evento");
+			});
+	};
+
+	if (file) {
+		const reader = new FileReader();
+		reader.onload = (e) => updateWithImage(e.target.result);
+		reader.readAsDataURL(file);
+	} else {
+		updateWithImage(existingImage);
+	}
+}
+
+// Delete event
+function deleteEvent(id) {
+	if (!confirm("¿Estás seguro de eliminar este evento?")) return;
+
+	fetch(`${eventsURL}/${id}`, { method: "DELETE" })
+		.then(res => {
+			if (res.ok) {
+				alert("🗑️ Evento eliminado");
+				loadEvents();
+			} else {
+				throw new Error("Error al eliminar");
+			}
+		})
+		.catch(err => {
+			console.error("❌ No se pudo eliminar:", err);
+			alert("❌ Error al eliminar el evento.");
+		});
+}
+
+// Clear form inputs and modal data
+function clearForm() {
+	document.getElementById("eventTitle").value = "";
+	document.getElementById("eventDescription").value = "";
+	document.getElementById("eventDate").value = "";
+	document.getElementById("formFile").value = "";
+	const modal = document.getElementById("exampleModal");
+	modal.removeAttribute("data-event-id");
+	modal.removeAttribute("data-event-img");
+}
