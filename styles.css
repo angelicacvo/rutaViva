@@ -117,7 +117,6 @@ footer .footer-logo .logo_nav {
     "aside main"
     "footer footer";
   grid-template-columns: 1fr 6fr;
-  grid-template-rows: 4fr 1fr;
 }
 
 .desktop__container aside,
@@ -127,7 +126,7 @@ footer .footer-logo .logo_nav {
   grid-area: aside;
   background-color: var(--darker-green);
   text-align: center;
-  padding: 3rem 0.8rem;
+  height: 100vh;
 }
 
 .desktop__container main,
@@ -139,12 +138,6 @@ footer .footer-logo .logo_nav {
   padding: 2rem 0.5rem;
 }
 
-.desktop__container footer,
-.contact__container footer,
-.subscriptions__container footer,
-.events__container footer {
-  grid-area: footer;
-}
 
 /* botones */
 .btn-primary{
