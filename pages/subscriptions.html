@@ -35,7 +35,7 @@
           class="nav-link active"
           aria-current="page"
           href="/pages/desktop.html"
-          >Panel principal</a
+          >Escritorio</a
         >
         <a
           class="nav-link active"
@@ -55,7 +55,7 @@
           href="/pages/contact.html"
           >Contacto</a
         >
-        <button type="button" class="btn btn-danger">Cerrar sesión</button>
+        <button id="logoutBtn" type="button" class="btn btn-danger">Cerrar sesión</button>
       </div>
     </aside>
 
@@ -69,7 +69,8 @@
             <th scope="col">Acciones</th>
           </tr>
         </thead>
-        <tbody id="subscribers"></tbody>
+        <tbody id="subscribers">
+        </tbody>
       </table>
     </main>
 
@@ -79,5 +80,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="../js/subs.js"></script>
+    <script src="/Js/guardian.js"></script>
+    <script src="/Js/logout.js"></script>
   </body>
 </html>
