@@ -1,10 +1,6 @@
 {
   "subs": [
     {
-      "id": "1",
-      "email": "mamama@mail.com"
-    },
-    {
       "id": "2",
       "email": "asasdasd@cor.com"
     },
@@ -15,6 +11,20 @@
     {
       "id": "4",
       "email": "mail@example.com"
+    }
+  ],
+  "events": [
+    {
+      "title": "Name event",
+      "description": "this event is an example",
+      "state": "Active",
+      "date": "12/08/2025"
+    },
+    {
+      "title": "Evento canónico",
+      "description": "Este es un evento canonico",
+      "state": "Active",
+      "date": "31/12/2024"
     }
   ]
 }
