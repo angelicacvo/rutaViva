@@ -114,8 +114,7 @@ footer .footer-logo .logo_nav {
 .events__container {
   display: grid;
   grid-template-areas:
-    "aside main"
-    "footer footer";
+    "aside main";
   grid-template-columns: 1fr 6fr;
 }
 
