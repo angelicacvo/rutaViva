@@ -15,16 +15,18 @@
   ],
   "events": [
     {
-      "title": "Name event",
-      "description": "this event is an example",
+      "title": "Hola",
+      "description": "Hola",
       "state": "Active",
-      "date": "12/08/2025"
+      "date": "2025-07-15T16:55",
+      "id": "5ef7"
     },
     {
-      "title": "Evento canónico",
-      "description": "Este es un evento canonico",
-      "state": "Active",
-      "date": "31/12/2024"
+      "id": "bfba",
+      "title": "hola",
+      "description": "guatape",
+      "date": "2025-07-16T15:44",
+      "state": "active"
     }
   ]
 }
