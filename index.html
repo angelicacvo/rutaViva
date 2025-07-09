@@ -1,322 +1,355 @@
 <html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Home</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link
-	href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-	rel="stylesheet"
-	/>
-	<script
-	src="https://kit.fontawesome.com/ea4c7975d5.js"
-	crossorigin="anonymous"
-	></script>
-	<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-	crossorigin="anonymous"
-	/>
-	<link rel="stylesheet" href="styles.css" />
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/ea4c7975d5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body class="index_container">
-	<header>
-	<nav class="navbar navbar-expand-lg">
-		<div class="container-fluid">
-		<div class="brand__container">
-			<a class="brand" href="#">
-			<img
-				class="logo_nav"
-				src="./assets/img/logoRutaViva.png"
-				alt=""
-			/>
-			</a>
-			<h2 class="title__h2">Ruta viva</h2>
-		</div>
-		<button
-			class="navbar-toggler"
-			type="button"
-			data-bs-toggle="collapse"
-			data-bs-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent"
-			aria-expanded="false"
-			aria-label="Toggle navigation"
-		>
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-			<li class="nav-item">
-				<a
-				class="nav-link active"
-				aria-current="page"
-				href="/index.html"
-				>Inicio</a
-				>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link active" href="#about-us">Acerca de</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link active" href="#events">Eventos</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link active" href="#contact">Contacto</a>
-			</li>
-			<!-- esto se quita, es para poder navegar -->
-			<li class="nav-item">
-				<a class="nav-link active" href="/pages/login.html">Login</a>
-			</li>
-			</ul>
-		</div>
-		</div>
-	</nav>
-	</header>
+  <body class="index_container">
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="brand__container">
+            <a class="brand" href="#">
+              <img
+                class="logo_nav"
+                src="./assets/img/logoRutaViva.png"
+                alt=""
+              />
+            </a>
+            <h2 class="title__h2">Ruta viva</h2>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#about-us">Acerca de</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#events">Eventos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#contact">Contacto</a>
+              </li>
+              <!-- esto se quita, es para poder navegar -->
+              <li class="nav-item">
+                <a class="nav-link active" href="/pages/login.html">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-	<main>
-	<section class="carousel_container">
-		<div
-		id="carouselExampleAutoplaying"
-		class="carousel slide"
-		data-bs-ride="carousel"
-		>
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-			<img
-				src="./assets/img/caminata_carrusel.png"
-				class="d-block w-100"
-				alt=""
-			/>
-			</div>
-			<div class="carousel-item">
-			<img
-				src="./assets/img/ciclismo_carrusel.png"
-				class="d-block w-100"
-				alt="..."
-			/>
-			</div>
-			<div class="carousel-item">
-			<img
-				src="./assets/img/patinaje_carrusel.png"
-				class="d-block w-100"
-				alt="..."
-			/>
-			</div>
-		</div>
-		<button
-			class="carousel-control-prev"
-			type="button"
-			data-bs-target="#carouselExampleAutoplaying"
-			data-bs-slide="prev"
-		>
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Previous</span>
-		</button>
-		<button
-			class="carousel-control-next"
-			type="button"
-			data-bs-target="#carouselExampleAutoplaying"
-			data-bs-slide="next"
-		>
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Next</span>
-		</button>
-		</div>
-	</section>
+    <main>
+      <section class="carousel_container">
+        <div
+          id="carouselExampleAutoplaying"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="./assets/img/caminata_carrusel.png"
+                class="d-block w-100"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/img/ciclismo_carrusel.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/img/patinaje_carrusel.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
 
-	<section class="about-us">
-		<div class="about-us__description">
-		<h3 class="title__h3">Titulo</h3>
-		<p class="about-us__p">Descripcion</p>
-		</div>
+      <section class="about-us">
+        <div class="about-us__description">
+          <h3 class="title__h3">Sobre nosotros</h3>
+          <p class="about-us__p">
+            Crear una comunidad donde quienes tienen experiencia compartan sus
+            conocimientos y tips con quienes están empezando. En Ruta Viva, cada
+            evento es una oportunidad para descubrir nuevos caminos, hacer
+            amistades, y crecer como equipo. Nuestro sistema web permite a los
+            visitantes explorar actividades, conocer detalles logísticos y
+            suscribirse fácilmente. A su vez, brindamos a los organizadores una
+            herramienta sencilla para gestionar eventos, participantes y
+            comunicaciones. Nos inspira el diseño de redes como Strava, donde la
+            pasión por moverse se convierte en un estilo de vida compartido. Por
+            eso, nuestra plataforma está pensada para ser visualmente atractiva,
+            intuitiva y funcional en todos los dispositivos.
+          </p>
+        </div>
 
-		<div class="about-us__img-container">
-		<img
-			class="about-us__img"
-			src="/assets/img/senderismo3.png"
-			alt="about-us"
-		/>
-		</div>
-	</section>
+        <div class="about-us__img-container">
+          <img
+            class="about-us__img"
+            src="/assets/img/senderismo3.png"
+            alt="about-us"
+          />
+        </div>
+      </section>
 
-	<section class="events">
-		<h3 class="title__h3">Eventos</h3>
-		<div class="events_cards">
-		<!-- Aquí se insertan dinámicamente los eventos activos -->
-		</div>
-	</section>
+      <section class="events">
+        <h3 class="title__h3">Eventos</h3>
+        <div class="events_cards">
+          <!-- Aquí se insertan dinámicamente los eventos activos -->
+        </div>
+      </section>
 
+      <section class="contact">
+        <div class="contact-map">
+          <img
+            class="contact-map__img"
+            src="./assets/img/mapaMedellin.png"
+            alt=""
+          />
+        </div>
+        <div class="contact-form">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputName1" class="form-label">Nombre</label>
+              <input type="name" class="form-control" id="exampleInputName1" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Correo electrónico</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Mensaje</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </section>
 
-	<section class="contact">
-		<div class="contact-map">
-		<img
-			class="contact-map__img"
-			src="./assets/img/mapaMedellin.png"
-			alt=""
-		/>
-		</div>
-		<div class="contact-form">
-		<form>
-			<div class="mb-3">
-			<label for="exampleInputName1" class="form-label">Nombre</label>
-			<input type="name" class="form-control" id="exampleInputName1" />
-			</div>
-			<div class="mb-3">
-			<label for="exampleInputEmail1" class="form-label"
-				>Correo electrónico</label
-			>
-			<input
-				type="email"
-				class="form-control"
-				id="exampleInputEmail1"
-				aria-describedby="emailHelp"
-			/>
-			</div>
-			<div class="mb-3">
-			<label for="exampleFormControlTextarea1" class="form-label"
-				>Mensaje</label
-			>
-			<textarea
-				class="form-control"
-				id="exampleFormControlTextarea1"
-				rows="3"
-			></textarea>
-			</div>
-			<button type="submit" class="btn btn-primary">Enviar</button>
-		</form>
-		</div>
-	</section>
+      <section class="testimonials">
+        <h3 class="title__h3">Testimonios</h3>
 
-<section class="testimonials">
-<h3 class="title__h3">Testimonios</h3>
+        <!-- Botón para abrir el modal -->
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Agregar Testimonios
+        </button>
 
-<!-- Botón para abrir el modal -->
-<button
-	type="button"
-	class="btn btn-primary"
-	data-bs-toggle="modal"
-	data-bs-target="#exampleModal"
->
-	Agregar Testimonios
-</button>
+        <!-- Modal para agregar testimonio -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Agregar testimonio
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form id="form-testimonio">
+                  <div class="mb-3">
+                    <label for="testimonial-name" class="form-label"
+                      >Nombre completo</label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="testimonial-name"
+                      rows="1"
+                    ></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="testimonial-event" class="form-label"
+                      >Nombre del evento</label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="testimonial-event"
+                      rows="1"
+                    ></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="testimonial-place" class="form-label"
+                      >Descripción (lugar)</label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="testimonial-place"
+                      rows="1"
+                    ></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="testimonial-date" class="form-label"
+                      >Fecha y hora</label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="testimonial-date"
+                      rows="1"
+                    ></textarea>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cerrar
+                </button>
+                <button type="button" class="btn btn-primary">Guardar</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<!-- Modal para agregar testimonio -->
-<div
-	class="modal fade"
-	id="exampleModal"
-	tabindex="-1"
-	aria-labelledby="exampleModalLabel"
-	aria-hidden="true"
->
-	<div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-		<h1 class="modal-title fs-5" id="exampleModalLabel">Agregar testimonio</h1>
-		<button
-			type="button"
-			class="btn-close"
-			data-bs-dismiss="modal"
-			aria-label="Close"
-		></button>
-		</div>
-		<div class="modal-body">
-			<form id="form-testimonio">
-			<div class="mb-3">
-				<label for="testimonial-name" class="form-label">Nombre completo</label>
-				<textarea class="form-control" id="testimonial-name" rows="1"></textarea>
-			</div>
-			<div class="mb-3">
-				<label for="testimonial-event" class="form-label">Nombre del evento</label>
-				<textarea class="form-control" id="testimonial-event" rows="1"></textarea>
-			</div>
-			<div class="mb-3">
-				<label for="testimonial-place" class="form-label">Descripción (lugar)</label>
-				<textarea class="form-control" id="testimonial-place" rows="1"></textarea>
-			</div>
-			<div class="mb-3">
-				<label for="testimonial-date" class="form-label">Fecha y hora</label>
-				<textarea class="form-control" id="testimonial-date" rows="1"></textarea>
-			</div>
-			</form>
-		</div>
-		<div class="modal-footer">
-		<button
-			type="button"
-			class="btn btn-secondary"
-			data-bs-dismiss="modal"
-		>
-			Cerrar
-		</button>
-		<button type="button" class="btn btn-primary">Guardar</button>
-		</div>
-	</div>
-	</div>
-</div>
+        <!-- Contenedor de tarjetas generadas con JS -->
+        <div class="testimonial_containers">
+          <!-- Las tarjetas de testimonios se insertarán aquí dinámicamente -->
+        </div>
+      </section>
+    </main>
 
-<!-- Contenedor de tarjetas generadas con JS -->
-<div class="testimonial_containers">
-	<!-- Las tarjetas de testimonios se insertarán aquí dinámicamente -->
-</div>
-</section>
-	</main>
+    <footer>
+      <div class="footer__info">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="brand">
+              <img
+                class="logo_nav"
+                src="./assets/img/logoRutaViva.png"
+                alt=""
+              />
+            </div>
+            <h3>Ruta Viva <i class="fa-solid fa-leaf"></i></h3>
+          </div>
+          <p>Conectamos personas a través del deporte</p>
+        </div>
+        <div class="social-media">
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+          <a href=""><i class="fa-brands fa-facebook"></i></a>
+          <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+          <a href=""><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="update__subscription">
+        <h3 class="title__h3">Mantente enterado</h3>
+        <p>Suscríbete a nuestro newsletter</p>
 
-	<footer>
-	<div class="footer__info">
-		<div class="footer-brand">
-		<div class="footer-logo">
-			<div class="brand">
-			<img
-				class="logo_nav"
-				src="./assets/img/logoRutaViva.png"
-				alt=""
-			/>
-			</div>
-			<h3>Ruta Viva <i class="fa-solid fa-leaf"></i></h3>
-		</div>
-		<p>Conectamos personas a través del deporte</p>
-		</div>
-		<div class="social-media">
-		<a href=""><i class="fa-brands fa-instagram"></i></a>
-		<a href=""><i class="fa-brands fa-facebook"></i></a>
-		<a href=""><i class="fa-brands fa-x-twitter"></i></a>
-		<a href=""><i class="fa-brands fa-tiktok"></i></a>
-		</div>
-	</div>
-	<div class="update__subscription">
-		<h3 class="title__h3">Mantente enterado</h3>
-		<p>Suscríbete a nuestro newsletter</p>
-
-		<div class="input-group mb-3">
-		<input
-			type="text"
-			class="form-control"
-			placeholder="Ingresa tu email"
-			aria-label="Ingresa tu email"
-			aria-describedby="button-addon2"
-			id="mail__sub"
-		/>
-		<button
-			class="btn btn-primary"
-			type="button"
-			id="button-addon2"
-		>
-			Enviar
-		</button>
-		</div>
-	</div>
-	</footer>
-	<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-	crossorigin="anonymous"
-	></script>
-	<script src="./js/reg_mails.js"></script>
-	<script src="./js/home_events.js"></script>
-	<script src="./js/contact_form.js"></script>
-	<script src="./js/testimonials.js"></script>
-	<script src="./js/mailersend.js"></script>
-</body>
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Ingresa tu email"
+            aria-label="Ingresa tu email"
+            aria-describedby="button-addon2"
+            id="mail__sub"
+          />
+          <button class="btn btn-primary" type="button" id="button-addon2">
+            Enviar
+          </button>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/reg_mails.js"></script>
+    <script src="./js/home_events.js"></script>
+    <script src="./js/contact_form.js"></script>
+    <script src="./js/testimonials.js"></script>
+    <script src="./js/mailersend.js"></script>
+  </body>
 </html>
